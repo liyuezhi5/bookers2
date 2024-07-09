@@ -26,6 +26,7 @@ class BooksController < ApplicationController
     book = Book.find(params[:is])
     book.destroy
     redirect_to books_path
+  end
   
   private
   
