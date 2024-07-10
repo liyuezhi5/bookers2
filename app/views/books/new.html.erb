@@ -1,36 +1,6 @@
 <h1>Book押したら来るとこ</h1>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-4" style="background-color: orange;">
-      <h2>User info</h2>
-        <%= image_tag 'no_image', size: "100x100" %>
-          <table class="table table-striped">
-            <tbody>
-              <tr>
-                <th>name</th>
-                <th></th>
-              </tr>
-              <tr>
-                <th>introduction</th>
-                <th></th>
-              </tr>
-            </tbody>
-          </table>
-        <%= link_to books_path do %>
-          <i class="fa-solid fa-user-gear"></i>
-        <% end %>
-
-      <h2>New book</h2>
-        <%= form_with model: @book do |f| %>
-      <h4>Title</h4>
-        <%= f.text_field :title %>
-      <h4>Opinion</h4>
-        <%= f.text_area :body %>
-      <br>
-        <%= f.submit 'Create Book' %>
-        <% end %>
-    </div>
+<%= render 'list', books: @books %>
 
 <div class="col-lg-8" style="background-color: pink;">
 <table class="table table-striped">
@@ -41,7 +11,7 @@
       <th>Opinion</th>
     </tr>
   </thead>
-  
+
   <tbody>
     <h2>Books</h2>
     <% @books.each do |book| %>

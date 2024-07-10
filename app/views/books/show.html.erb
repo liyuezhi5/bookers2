@@ -1,11 +1,33 @@
-<div>
-  <p>投稿ユーザー画像: <%= image_tag @book.user.get_profile_image(100,100) %></p>
-  <p>ユーザーネーム: <%= @book.user.name %></p>
-  <p>Title: <%= @book.title %></p>
-  <p>Opinion: <%= @book.body %></p>
+<h1>bookのshow page</h1>
+
+<%= render 'list', books: @books %>
+
+<div class="col-lg-8" style="background-color: pink;">
   
-  <% if @book.user == current_user %>
-    <%= link_to "Destroy", book_path(@book), method: :delete %>
-  <% end %>
-  
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>(user_photo)</th>
+      <th>(Title)</th>
+      <th>(Opinion)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <h2>Book detail</h2>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= image_tag @book.user.get_profile_image(100,100) %></td>
+        <td><%= @book.title %></td>
+        <td><%= @book.body %></td>
+        <td>edit</td>
+        <td><% if @book.user == current_user %>
+              <%= link_to "Destroy", book_path(@book), method: :delete %>
+            <% end %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
 </div>
