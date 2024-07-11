@@ -1,1 +1,57 @@
-<h1>user押したら来るとこ</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <h2>User info</h2>
+        <%= image_tag 'no_image', size: "100x100" %>
+          <table class="table table-striped">
+            <tbody>
+              <tr>
+                <th>name</th>
+                <th><%= @user.name %></th>
+              </tr>
+              <tr>
+                <th>introduction</th>
+                <th></th>
+              </tr>
+            </tbody>
+          </table>
+          
+        <a class="btn btn-outline-secondary btn-block edit_user_id" href="/users/id/edit"></a>
+        
+
+      <h2>New book</h2>
+        <%= form_with model: @book do |f| %>
+      <h4>Title</h4>
+        <%= f.text_field :title %>
+      <h4>Opinion</h4>
+        <%= f.text_area :body %>
+      <br>
+        <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book">
+        #createしたらbook/shoe.html.erbへ
+        <% end %>
+    </div>
+    
+    <div class="col-lg-8">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>image</th>
+      <th>name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <h2>Users</h2>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= image_tag user.get_profile_image(100,100) %></td>
+        <td><%= user.name %></td>
+        <td><%= link_to "Show", books_path %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+</div>

@@ -1,6 +1,8 @@
-<h1>HOME,ログアウト押したら来るとこ</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
 
-<h1>welcome to 
+<h1>welcome to
 
 <%= link_to books_path do %>
   <i class="fa-solid fa-book" style="color: #0a0a0a;"></i>
@@ -8,7 +10,7 @@
 
 Bookers!!</h1>
 
-<h4>In 
+<h6>In
 
 <%= link_to books_path do %>
   <i class="fa-solid fa-book" style="color: #0a0a0a;"></i>
@@ -21,9 +23,14 @@ Bookers,
 <br>
 <br>
     about various books!
-</h4>
+</h6>
 
-<%= link_to"Log in", new_user_session_path %>
+<div class="btn-wrapper col-10 mx-auto">
+<%= link_to"Log in", new_user_session_path, class: "btn btn-info btn-sm btn-block" %>
 <br>
-<%= link_to"Sign up", new_user_registration_path %>
- 
+<%= link_to"Sign up", new_user_registration_path, class: "btn btn-success btn-sm btn-block" %>
+</div>
+
+    </div>
+  </div>
+</div>

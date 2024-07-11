@@ -1,4 +1,6 @@
-<h1>ログイン押したら来るとこ</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-5">
 
 <h2>Log in</h2>
 
@@ -22,8 +24,12 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <input type="submit" name="commit" value="Log in" class="btn btn-sm btn-primary" data-disable-with="Log in">
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+    </div>
+  </div>
+</div>
