@@ -1,3 +1,7 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
 <%= render 'list', books: @books %>
 
 <div class="col-lg-8">
@@ -16,11 +20,13 @@
         <td><%= @book.title %></td>
         <td><%= @book.body %></td>
         
-        <div class="btn-wrapper col-1 mx-auto">
-        <td><%= link_to"Edit", edit_book_path, class: "btn btn-success btn-sm btn-block" %></td>
+        <% if @book.user == current_user %>
+          <div class="btn-wrapper col-1 mx-auto">
+            <td><%= link_to"Edit", edit_book_path, class: "btn btn-success btn-sm btn-block" %></td>
 
-        <td><%= link_to"Destroy", books_path, class: "btn btn-danger btn-sm btn-block" %></td>
-        </div>
+            <td><%= link_to"Destroy", books_path, class: "btn btn-danger btn-sm btn-block" %></td>
+          </div>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
