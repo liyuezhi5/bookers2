@@ -26,8 +26,9 @@
       <h4>Opinion</h4>
         <%= f.text_area :body %>
       <br>
-        <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book">
-        #createしたらbook/shoe.html.erbへ
+  
+        <%= link_to"Create Book", books_path, class: "btn btn-success btn-sm btn-block" %>
         <% end %>
     </div>
+  
   

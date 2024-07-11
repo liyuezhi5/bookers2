@@ -1,35 +1,4 @@
-<div class="container">
-  <div class="row">
-    <div class="col-lg-4">
-      <h2>User info</h2>
-        <%= image_tag 'no_image', size: "100x100" %>
-          <table class="table table-striped">
-            <tbody>
-              <tr>
-                <th>name</th>
-                <th><%= @user.name %></th>
-              </tr>
-              <tr>
-                <th>introduction</th>
-                <th></th>
-              </tr>
-            </tbody>
-          </table>
-          
-        <a class="btn btn-outline-secondary btn-block edit_user_id" href="/users/id/edit"></a>
-        
-
-      <h2>New book</h2>
-        <%= form_with model: @book do |f| %>
-      <h4>Title</h4>
-        <%= f.text_field :title %>
-      <h4>Opinion</h4>
-        <%= f.text_area :body %>
-      <br>
-        <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book">
-        #createしたらbook/shoe.html.erbへ
-        <% end %>
-    </div>
+<%= render 'books/list', books: @books %>
     
     <div class="col-lg-8">
 <table class="table table-striped">
