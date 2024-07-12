@@ -1,21 +1,24 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-md-3">
       <h2>User info</h2>
-        <%= image_tag 'no_image', size: "100x100" %>
+        
+          <%= image_tag 'no_image', size: "100x100" %>
+        
           <table class="table table-striped">
             <tbody>
               <tr>
                 <th>name</th>
-                <th><%= @user.name %></th>
+                <td></td>
               </tr>
               <tr>
                 <th>introduction</th>
-                <th></th>
+                <td></td>
               </tr>
             </tbody>
           </table>
           
+        <%= link_to 'edit', edit_user_path(@user.id) %>
         <a class="btn btn-outline-secondary btn-block edit_user_id" href="/users/id/edit"></a>
         
 
