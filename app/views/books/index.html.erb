@@ -8,7 +8,7 @@
   </ul>
 <% end %>
 
-<%= render 'list', books: @books %>
+<%= render 'list', book: @book, user: @user %>
 
 <div class="offset-md-1"></div>
 <div class="col-md-8">
@@ -25,8 +25,14 @@
     <h2>Books</h2>
     <% @books.each do |book| %>
       <tr>
-        <td><%= link_to user_path image_tag book.user.get_profile_image(100,100) %></td>
-        <td><%= link_to book_path book.title %></td>
+        <td><%= link_to user_path(book.user) do %>
+            <%= image_tag book.user.get_profile_image(100,100) %>
+            <% end %>
+        </td>
+        <td><%= link_to book_path(book) do %>
+              <%=book.title %>
+            <% end %>
+        </td>
         <td><%= book.body %></td>
       </tr>
     <% end %>

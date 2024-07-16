@@ -29,7 +29,7 @@
             <% if user_signed_in? %>
             
             <li class="nav-item">
-              <%= link_to books_path, class: 'nav-link text-light' do %>
+              <%= link_to books_path, class: 'nav-link text-light link-opacity-10-hover' do %>
                 <i class="fa-solid fa-house" style="color: #ffffff;"></i>
                 Home
               <% end %>
@@ -90,6 +90,7 @@
 
 
     <main class="mb-auto">
+      
     <%= yield %>
     </main>
     <footer class="text-dark pt-5 pb-4">
